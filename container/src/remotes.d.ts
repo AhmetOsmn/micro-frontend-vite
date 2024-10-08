@@ -1,3 +1,5 @@
 declare module 'marketing/LandingPage'
 declare module 'marketing/PricingPage'
 declare module 'dashboard/DashboardPage'
+declare module 'auth/SignUpPage'
+declare module 'auth/SignInPage'

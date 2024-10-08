@@ -11,6 +11,7 @@ export default defineConfig({
       remotes: {
         marketing: "http://localhost:5001/assets/remoteEntry.js",
         dashboard: "http://localhost:5002/assets/remoteEntry.js",
+        auth: "http://localhost:5003/assets/remoteEntry.js",
       },
       shared: packageJson.dependencies,
     }),
