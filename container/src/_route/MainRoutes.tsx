@@ -1,0 +1,27 @@
+import LandingPage from "marketing/LandingPage";
+import PricingPage from "marketing/PricingPage";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import Root from "./Root";
+const MainRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Root />}>
+        <Route path="/" element={<Layout />}>
+          <Route path="" element={<LandingPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route
+            path="*"
+            element={
+              <div>
+                <h1>Not Found</h1>
+              </div>
+            }
+          />
+        </Route>
+      </Route>
+    </Routes>
+  );
+};
+
+export default MainRoutes;
