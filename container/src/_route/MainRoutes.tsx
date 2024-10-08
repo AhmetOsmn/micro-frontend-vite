@@ -1,3 +1,4 @@
+import DashboardPage from "dashboard/DashboardPage";
 import LandingPage from "marketing/LandingPage";
 import PricingPage from "marketing/PricingPage";
 import { Route, Routes } from "react-router-dom";
@@ -10,6 +11,7 @@ const MainRoutes = () => {
         <Route path="/" element={<Layout />}>
           <Route path="" element={<LandingPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
           <Route
             path="*"
             element={

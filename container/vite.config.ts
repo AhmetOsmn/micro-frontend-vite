@@ -10,6 +10,7 @@ export default defineConfig({
       name: "container",
       remotes: {
         marketing: "http://localhost:5001/assets/remoteEntry.js",
+        dashboard: "http://localhost:5002/assets/remoteEntry.js",
       },
       shared: packageJson.dependencies,
     }),
