@@ -1,7 +1,6 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import packageJson from "./package.json";
 
 export default defineConfig({
   plugins: [
@@ -12,8 +11,7 @@ export default defineConfig({
         marketing: "http://localhost:5001/assets/remoteEntry.js",
         dashboard: "http://localhost:5002/assets/remoteEntry.js",
         auth: "http://localhost:5003/assets/remoteEntry.js",
-      },
-      shared: packageJson.dependencies,
+      },    
     }),
   ],
   build: {

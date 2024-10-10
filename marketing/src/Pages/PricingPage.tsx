@@ -7,7 +7,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-
 const PricingPage = () => {
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>

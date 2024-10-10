@@ -6,9 +6,10 @@ import {
   CardContent,
   CardMedia,
   Container,
+  Link,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -27,11 +28,16 @@ const LandingPage = () => {
           the creator, etc. Make it short and sweet, but not too short so folks
           don't simply skip over it entirely.
         </Typography>
-        <Box display="flex" alignItems="center" justifyContent="center" marginTop={5}>
-          <Link to="/pricing" style={{ marginInlineEnd: 25 }}>
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          marginTop={5}
+        >
+          <Link href="marketing/pricing" style={{ marginInlineEnd: 25 }}>
             <Button variant="contained">Pricing</Button>
           </Link>
-          <Link to="/pricing">
+          <Link href="marketing/pricing">
             <Button variant="contained">Pricing</Button>
           </Link>
         </Box>
@@ -96,13 +102,13 @@ const LandingPage = () => {
           </Typography>
           <Box sx={{ mt: 2 }}>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link to="/">Privacy Policy</Link>
+              <Link href="/">Privacy Policy</Link>
             </Button>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link to="/">Terms of Service</Link>
+              <Link href="/">Terms of Service</Link>
             </Button>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link to="/">Contact Us</Link>
+              <Link href="/">Contact Us</Link>
             </Button>
           </Box>
         </Container>

@@ -15,6 +15,11 @@ const Header = () => {
               Dashboard
             </Button>
           </Link>
+          <Link href="/marketing">
+            <Button variant="contained" color="primary">
+              Marketing
+            </Button>
+          </Link>
         </Typography>
 
         <Link href="/auth/signin">

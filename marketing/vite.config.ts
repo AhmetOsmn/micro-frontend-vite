@@ -1,7 +1,6 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import packageJson from "./package.json";
 
 export default defineConfig({
   plugins: [
@@ -10,10 +9,8 @@ export default defineConfig({
       name: "marketing",
       filename: "remoteEntry.js",
       exposes: {
-        "./LandingPage": "./src/Pages/LandingPage",
-        "./PricingPage": "./src/Pages/PricingPage",
-      },
-      shared: packageJson.dependencies,
+        "./MarketingApp": "./src/bootstrap",
+      },      
     }),
   ],
   build: {
