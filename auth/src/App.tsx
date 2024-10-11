@@ -1,7 +1,7 @@
 import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
 import useSyncGlobalRouter from "./hooks/useSyncGlobalRouter";
-import SignInPage from "./pages/SignInPage";
-import SignUpPage from "./pages/SignUpPage";
+import SignInPage, { SignInDto } from "./pages/SignInPage";
+import SignUpPage, { SignUpDto } from "./pages/SignUpPage";
 
 const RouterHandler = () => {
   useSyncGlobalRouter({ basename: "/auth" });
@@ -9,27 +9,32 @@ const RouterHandler = () => {
   return <Outlet />;
 };
 
-const router = createMemoryRouter(
-  [
-    {
-      path: "/",
-      element: <RouterHandler />,
-      children: [
-        {
-          index: true,
-          element: <SignInPage />,
-        },
-        {
-          path: "signup",
-          element: <SignUpPage />,
-        },
-      ],
-    },
-  ],
-  { initialEntries: [location.pathname.replace("/auth", "") || "/"] }
-);
+export type Callback = {
+  onSignIn?: (signInDto: SignInDto) => void;
+  onSignUp?: (signUpDto: SignUpDto) => void;
+};
 
-function App() {
+function App({ onSignIn, onSignUp }: Callback) {
+  const router = createMemoryRouter(
+    [
+      {
+        path: "/",
+        element: <RouterHandler />,
+        children: [
+          {
+            index: true,
+            element: <SignInPage onSignIn={onSignIn} />,
+          },
+          {
+            path: "signup",
+            element: <SignUpPage onSignUp={onSignUp} />,
+          },
+        ],
+      },
+    ],
+    { initialEntries: [location.pathname.replace("/auth", "") || "/"] }
+  );
+
   return <RouterProvider router={router} />;
 }
 

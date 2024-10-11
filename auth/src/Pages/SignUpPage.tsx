@@ -1,7 +1,34 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from './SignUpPage.module.css';
+import styles from "./SignUpPage.module.css";
 
-const SignUpPage = () => {
+type Props = {
+  onSignUp?: (signUpDto: SignUpDto) => void;
+};
+
+export type SignUpDto = {
+  username: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  passwordConfirm: string;
+};
+
+const SignUpPage = ({ onSignUp }: Props) => {
+  const [signUpDto, setSignUpDto] = useState<SignUpDto>({
+    username: "",
+    firstName: "",
+    lastName: "",
+    password: "",
+    passwordConfirm: "",
+  });
+
+  const handleSignUp = () => {
+    if (onSignUp) {
+      onSignUp(signUpDto);
+    }
+  };
+
   return (
     <div className={styles.signupContainer}>
       <p className={styles.signupTitle}>Sign Up</p>
@@ -14,6 +41,10 @@ const SignUpPage = () => {
             name="username"
             className={styles.inputField}
             placeholder="Username"
+            onChange={(e) =>
+              setSignUpDto({ ...signUpDto, username: e.target.value })
+            }
+            value={signUpDto.username}
           />
         </div>
         <div className={styles.formGroup}>
@@ -24,6 +55,10 @@ const SignUpPage = () => {
             name="firstName"
             className={styles.inputField}
             placeholder="First Name"
+            onChange={(e) =>
+              setSignUpDto({ ...signUpDto, firstName: e.target.value })
+            }
+            value={signUpDto.firstName}
           />
         </div>
         <div className={styles.formGroup}>
@@ -34,6 +69,10 @@ const SignUpPage = () => {
             name="lastName"
             className={styles.inputField}
             placeholder="Last Name"
+            onChange={(e) =>
+              setSignUpDto({ ...signUpDto, lastName: e.target.value })
+            }
+            value={signUpDto.lastName}
           />
         </div>
         <div className={styles.formGroup}>
@@ -44,6 +83,10 @@ const SignUpPage = () => {
             name="password"
             className={styles.inputField}
             placeholder="Password"
+            onChange={(e) =>
+              setSignUpDto({ ...signUpDto, password: e.target.value })
+            }
+            value={signUpDto.password}
           />
         </div>
         <div className={styles.formGroup}>
@@ -54,10 +97,18 @@ const SignUpPage = () => {
             name="passwordConfirm"
             className={styles.inputField}
             placeholder="Password Confirm"
+            onChange={(e) =>
+              setSignUpDto({ ...signUpDto, passwordConfirm: e.target.value })
+            }
+            value={signUpDto.passwordConfirm}
           />
         </div>
         <div className={styles.formActions}>
-          <button className={styles.btnPrimary}>
+          <button
+            className={styles.btnPrimary}
+            onClick={handleSignUp}
+            type="button"
+          >
             Sign Up
           </button>
           <Link to="/" className={styles.btnSecondary}>

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import useSyncContainerRouter from "../../Hooks/useSyncContainerRouter";
+import useSyncContainerRouter from "../../hooks/useSyncContainerRouter";
 const MarketingLazy = lazy(() => import("../../apps/MarketingApp"));
 
 const MarketingRouterHandler = () => {
