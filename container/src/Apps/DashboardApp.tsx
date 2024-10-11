@@ -1,8 +1,13 @@
-
+import { mount } from "dashboard/DashboardApp";
+import { useEffect, useRef } from "react";
 const DashboardApp = () => {
-  return (
-    <div>DashboardApp</div>
-  )
-}
+  const ref = useRef(null);
 
-export default DashboardApp
+  useEffect(() => {
+    mount(ref.current);
+  }, []);
+
+  return <div ref={ref} />;
+};
+
+export default DashboardApp;

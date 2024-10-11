@@ -11,8 +11,7 @@ export default defineConfig({
       name: "auth",
       filename: "remoteEntry.js",
       exposes: {
-        "./SignInPage": "./src/Pages/SignInPage",
-        "./SignUpPage": "./src/Pages/SignUpPage",
+        "./AuthApp": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),

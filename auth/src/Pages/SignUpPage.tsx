@@ -59,7 +59,7 @@ const SignUpPage = () => {
           <button className="p-2 bg-blue-600 text-white rounded">
             Sign Up
           </button>
-          <Link to="/auth/signin" className="p-2 bg-slate-600 text-white rounded">
+          <Link to="/" className="p-2 bg-slate-600 text-white rounded">
             Return Sign In 
           </Link>
         </div>

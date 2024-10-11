@@ -11,7 +11,7 @@ export default defineConfig({
       name: "dashboard",
       filename: "remoteEntry.js",
       exposes: {
-        "./DashboardPage": "./src/Pages/DashboardPage",
+        "./DashboardApp": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),

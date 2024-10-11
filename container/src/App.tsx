@@ -5,6 +5,8 @@ import Home from "./components/Home";
 import useSyncContainerRouter from "./Hooks/useSyncContainerRouter";
 
 const MarketingLazy = lazy(() => import("./Apps/MarketingApp"));
+const DashboardLazy = lazy(() => import("./Apps/DashboardApp"));
+const AuthLazy = lazy(() => import("./Apps/AuthApp"));
 
 const ContainerMarketingRouterHandler = () => {
   useSyncContainerRouter({ basepath: "marketing" });
@@ -12,6 +14,26 @@ const ContainerMarketingRouterHandler = () => {
   return (
     <Suspense>
       <MarketingLazy />
+    </Suspense>
+  );
+};
+
+const ContainerDashboardRouterHandler = () => {
+  useSyncContainerRouter({ basepath: "dashboard" });
+
+  return (
+    <Suspense>
+      <DashboardLazy />
+    </Suspense>
+  );
+};
+
+const ContainerAuthRouterHandler = () => {
+  useSyncContainerRouter({ basepath: "auth" });
+
+  return (
+    <Suspense>
+      <AuthLazy />
     </Suspense>
   );
 };
@@ -31,8 +53,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/dashboard/*",
+        element: <ContainerDashboardRouterHandler />,
+      },
+      {
         path: "/marketing/*",
         element: <ContainerMarketingRouterHandler />,
+      },
+      {
+        path: "/auth/*",
+        element: <ContainerAuthRouterHandler />,
       },
     ],
   },

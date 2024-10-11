@@ -22,7 +22,7 @@ const Header = () => {
           </Link>
         </Typography>
 
-        <Link href="/auth/signin">
+        <Link href="/auth">
           <Button variant="contained" color="primary">
             Sign In
           </Button>

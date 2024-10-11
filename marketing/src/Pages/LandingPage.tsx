@@ -6,9 +6,9 @@ import {
   CardContent,
   CardMedia,
   Container,
-  Link,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const LandingPage = () => {
@@ -34,10 +34,10 @@ const LandingPage = () => {
           justifyContent="center"
           marginTop={5}
         >
-          <Link href="marketing/pricing" style={{ marginInlineEnd: 25 }}>
+          <Link to="/pricing" style={{ marginInlineEnd: 25 }}>
             <Button variant="contained">Pricing</Button>
           </Link>
-          <Link href="marketing/pricing">
+          <Link to="/pricing">
             <Button variant="contained">Pricing</Button>
           </Link>
         </Box>
@@ -102,13 +102,13 @@ const LandingPage = () => {
           </Typography>
           <Box sx={{ mt: 2 }}>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link href="/">Privacy Policy</Link>
+              <Link to="/">Privacy Policy</Link>
             </Button>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link href="/">Terms of Service</Link>
+              <Link to="/">Terms of Service</Link>
             </Button>
             <Button color="inherit" sx={{ mx: 1 }}>
-              <Link href="/">Contact Us</Link>
+              <Link to="/">Contact Us</Link>
             </Button>
           </Box>
         </Container>

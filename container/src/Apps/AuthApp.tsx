@@ -1,8 +1,14 @@
+import { mount } from "auth/AuthApp";
+import { useEffect, useRef } from "react";
 
 const AuthApp = () => {
-  return (
-    <div>AuthApp</div>
-  )
-}
+  const ref = useRef(null);
 
-export default AuthApp
+  useEffect(() => {
+    mount(ref.current);
+  }, []);
+
+  return <div ref={ref} />;
+};
+
+export default AuthApp;

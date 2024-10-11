@@ -23,10 +23,6 @@ const router = createMemoryRouter(
           path: "pricing",
           element: <PricingPage />,
         },
-        {
-          path: "hede",
-          element: <div>hede</div>,
-        },
       ],
     },
   ],

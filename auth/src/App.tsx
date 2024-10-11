@@ -1,16 +1,37 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
+import useSyncGlobalRouter from "./Hooks/useSyncGlobalRouter";
 import SignInPage from "./Pages/SignInPage";
 import SignUpPage from "./Pages/SignUpPage";
+import "./app.css";
+
+const RouterHandler = () => {
+  useSyncGlobalRouter({ basename: "/auth" });
+
+  return <Outlet />;
+};
+
+const router = createMemoryRouter(
+  [
+    {
+      path: "/",
+      element: <RouterHandler />,
+      children: [
+        {
+          index: true,
+          element: <SignInPage />,
+        },
+        {
+          path: "signup",
+          element: <SignUpPage />,
+        },
+      ],
+    },
+  ],
+  { initialEntries: [location.pathname.replace("/auth", "") || "/"] }
+);
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/auth/signup" element={<SignUpPage />} />
-        <Route path="/auth/signin" element={<SignInPage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

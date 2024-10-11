@@ -29,7 +29,7 @@ const SignInPage = () => {
           <button className="p-2 bg-blue-600 text-white rounded">
             Sign In
           </button>
-          <Link to="/auth/signup" className="p-2 bg-green-400 text-white rounded">
+          <Link to="/signup" className="p-2 bg-green-400 text-white rounded">
             Create Account
           </Link>
         </div>
