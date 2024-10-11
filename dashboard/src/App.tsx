@@ -1,6 +1,6 @@
 import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
-import useSyncGlobalRouter from "./Hooks/useSyncGlobalRouter";
-import DashboardPage from "./Pages/DashboardPage";
+import useSyncGlobalRouter from "./hooks/useSyncGlobalRouter";
+import DashboardPage from "./pages/DashboardPage";
 
 const RouterHandler = () => {
   useSyncGlobalRouter({ basename: "/dashboard" });

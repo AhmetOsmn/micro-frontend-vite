@@ -1,7 +1,7 @@
 import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
-import useSyncGlobalRouter from "./Hooks/useSyncGlobalRouter";
-import LandingPage from "./Pages/LandingPage";
-import PricingPage from "./Pages/PricingPage";
+import useSyncGlobalRouter from "./hooks/useSyncGlobalRouter";
+import LandingPage from "./pages/LandingPage";
+import PricingPage from "./pages/PricingPage";
 
 const RouterHandler = () => {
   useSyncGlobalRouter({ basename: "/marketing" });
