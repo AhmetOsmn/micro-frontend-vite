@@ -1,66 +1,67 @@
 import { Link } from "react-router-dom";
+import styles from './SignUpPage.module.css';
 
 const SignUpPage = () => {
   return (
-    <div className="h-screen p-3 flex flex-col items-center justify-center bg-gray-200">
-      <p className="font-bold text-4xl mb-6">Sign Up</p>
-      <form className="w-1/4 bg-green-300 p-16 rounded">
-        <div className="flex flex-col mb-2">
+    <div className={styles.signupContainer}>
+      <p className={styles.signupTitle}>Sign Up</p>
+      <form className={styles.signupForm}>
+        <div className={styles.formGroup}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
             id="username"
             name="username"
-            className="border-2 p-2 rounded-xl focus:outline-slate-600 font-semibold disabled:text-gray-400 cursor-pointer transition-all duration-300"
+            className={styles.inputField}
             placeholder="Username"
           />
         </div>
-        <div className="flex flex-col mb-2">
+        <div className={styles.formGroup}>
           <label htmlFor="firstName">First Name</label>
           <input
             type="text"
             id="firstName"
             name="firstName"
-            className="border-2 p-2 rounded-xl focus:outline-slate-600 font-semibold disabled:text-gray-400 cursor-pointer transition-all duration-300"
+            className={styles.inputField}
             placeholder="First Name"
           />
         </div>
-        <div className="flex flex-col mb-2">
+        <div className={styles.formGroup}>
           <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
             id="lastName"
             name="lastName"
-            className="border-2 p-2 rounded-xl focus:outline-slate-600 font-semibold disabled:text-gray-400 cursor-pointer transition-all duration-300"
+            className={styles.inputField}
             placeholder="Last Name"
           />
         </div>
-        <div className="flex flex-col mb-2">
+        <div className={styles.formGroup}>
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
             name="password"
-            className="border-2 p-2 rounded-xl focus:outline-slate-600 font-semibold disabled:text-gray-400 cursor-pointer transition-all duration-300"
+            className={styles.inputField}
             placeholder="Password"
           />
         </div>
-        <div className="flex flex-col mb-4">
+        <div className={styles.formGroup}>
           <label htmlFor="passwordConfirm">Password Confirm</label>
           <input
             type="password"
             id="passwordConfirm"
             name="passwordConfirm"
-            className="border-2 p-2 rounded-xl focus:outline-slate-600 font-semibold disabled:text-gray-400 cursor-pointer transition-all duration-300"
+            className={styles.inputField}
             placeholder="Password Confirm"
           />
         </div>
-        <div className="flex items-center justify-between">
-          <button className="p-2 bg-blue-600 text-white rounded">
+        <div className={styles.formActions}>
+          <button className={styles.btnPrimary}>
             Sign Up
           </button>
-          <Link to="/" className="p-2 bg-slate-600 text-white rounded">
-            Return Sign In 
+          <Link to="/" className={styles.btnSecondary}>
+            Return Sign In
           </Link>
         </div>
       </form>

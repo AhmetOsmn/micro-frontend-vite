@@ -2,7 +2,6 @@ import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
 import useSyncGlobalRouter from "./Hooks/useSyncGlobalRouter";
 import SignInPage from "./Pages/SignInPage";
 import SignUpPage from "./Pages/SignUpPage";
-import "./app.css";
 
 const RouterHandler = () => {
   useSyncGlobalRouter({ basename: "/auth" });
