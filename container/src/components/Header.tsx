@@ -1,12 +1,11 @@
 import { AppBar, Button, Link, Toolbar, Typography } from "@mui/material";
-import { useAuth, useIsAuthenticated } from "../contexts/auth/hooks";
+import { useAppContext } from "../packages/contexts/appContext/useAppContext";
 
 const Header = () => {
-  const isAuthenticated = useIsAuthenticated();
-  const { logout } = useAuth();
+  const { user, setUser } = useAppContext();
 
   const handleSignOut = () => {
-    logout();
+    setUser(null);
   };
 
   return (
@@ -30,7 +29,7 @@ const Header = () => {
           </Link>
         </Typography>
 
-        {isAuthenticated ? (
+        {user ? (
           <Button variant="contained" color="warning" onClick={handleSignOut}>
             Sign Out
           </Button>
