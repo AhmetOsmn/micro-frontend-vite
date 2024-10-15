@@ -1,22 +1,14 @@
-import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
-import useSyncGlobalRouter from "./hooks/useSyncGlobalRouter";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import PricingPage from "./pages/PricingPage";
 
-const RouterHandler = () => {
-  useSyncGlobalRouter({ basename: "/marketing" });
-
-  return <Outlet />;
-};
-
-const router = createMemoryRouter(
+const router = createBrowserRouter(
   [
     {
-      path: "/",
-      element: <RouterHandler />,
+      path: "/marketing/",
       children: [
         {
-          index: true,
+          path: "landing",
           element: <LandingPage />,
         },
         {
@@ -25,8 +17,7 @@ const router = createMemoryRouter(
         },
       ],
     },
-  ],
-  { initialEntries: [location.pathname.replace("/marketing", "") || "/"] }
+  ],  
 );
 
 function App() {

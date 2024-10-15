@@ -1,18 +1,13 @@
-import { createMemoryRouter, Outlet, RouterProvider } from "react-router-dom";
-import useSyncGlobalRouter from "./hooks/useSyncGlobalRouter";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 
-const RouterHandler = () => {
-  useSyncGlobalRouter({ basename: "/dashboard" });
 
-  return <Outlet />;
-};
 
-const router = createMemoryRouter(
+const router = createBrowserRouter(
   [
     {
-      path: "/",
-      element: <RouterHandler />,
+      path: "/dashboard",
+      element: <Outlet />,
       children: [
         {
           index: true,
@@ -20,8 +15,7 @@ const router = createMemoryRouter(
         },
       ],
     },
-  ],
-  { initialEntries: [location.pathname.replace("/dashboard", "") || "/"] }
+  ], 
 );
 
 function App() {

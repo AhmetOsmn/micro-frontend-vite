@@ -9,8 +9,10 @@ export default defineConfig({
       name: "marketing",
       filename: "remoteEntry.js",
       exposes: {
-        "./MarketingApp": "./src/bootstrap",
-      },      
+        "./LandingPage": "./src/pages/LandingPage",
+        "./PricingPage": "./src/pages/PricingPage",
+      },        
+      shared: ["react", "react-router-dom", "@mui/material"],
     }),
   ],
   build: {

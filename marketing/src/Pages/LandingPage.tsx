@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -34,10 +33,10 @@ const LandingPage = () => {
           justifyContent="center"
           marginTop={5}
         >
-          <Link to="/pricing" style={{ marginInlineEnd: 25 }}>
+          <Link to="/marketing/pricing" style={{ marginInlineEnd: 25 }}>
             <Button variant="contained">Pricing</Button>
           </Link>
-          <Link to="/pricing">
+          <Link to="/marketing/pricing">
             <Button variant="contained">Pricing</Button>
           </Link>
         </Box>

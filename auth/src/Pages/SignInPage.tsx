@@ -60,7 +60,7 @@ const SignInPage = ({ onSignIn }: Props) => {
           >
             Sign In
           </button>
-          <Link to="/signup" className={styles.btnSecondary}>
+          <Link to="/auth/signup" className={styles.btnSecondary}>
             Create Account
           </Link>
         </div>

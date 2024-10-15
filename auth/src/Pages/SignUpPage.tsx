@@ -111,7 +111,7 @@ const SignUpPage = ({ onSignUp }: Props) => {
           >
             Sign Up
           </button>
-          <Link to="/" className={styles.btnSecondary}>
+          <Link to="/auth/signin" className={styles.btnSecondary}>
             Return Sign In
           </Link>
         </div>

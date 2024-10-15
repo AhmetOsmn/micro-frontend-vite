@@ -22,7 +22,7 @@ const Header = () => {
               Dashboard
             </Button>
           </Link>
-          <Link href="/marketing">
+          <Link href="/marketing/landing">
             <Button variant="contained" color="primary">
               Marketing
             </Button>
@@ -34,7 +34,7 @@ const Header = () => {
             Sign Out
           </Button>
         ) : (
-          <Link href="/auth">
+          <Link href="/auth/signin">
             <Button variant="contained" color="primary">
               Sign In
             </Button>

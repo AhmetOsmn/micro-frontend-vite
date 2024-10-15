@@ -7,9 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useAppContext } from "../packages/contexts/appContext/useAppContext";
 const PricingPage = () => {
-  const { user } = useAppContext();
 
   return (
     <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
@@ -20,7 +18,7 @@ const PricingPage = () => {
         justifyContent="center"
       >
         <Button>
-          <Link to="/">Return Landing Page</Link>
+          <Link to="/marketing/landing">Return Landing Page</Link>
         </Button>
         <Typography
           variant="h3"
@@ -76,7 +74,7 @@ const PricingPage = () => {
                 </ul>
               </CardContent>
               <Box sx={{ textAlign: "center", pb: 2 }}>
-                {user ? (
+                {false ? (
                   <Button variant="contained" color="primary">
                     Upgrade
                   </Button>
