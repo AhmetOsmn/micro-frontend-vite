@@ -1,4 +1,4 @@
-/* Sayfa düzeni */
+
 .signinContainer {
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background-color: #e5e7eb; /* bg-gray-200 */
+  background-color: #e5e7eb; 
 }
 
 .signinTitle {
@@ -15,10 +15,10 @@
   margin-bottom: 24px;
 }
 
-/* Form stili */
+
 .signinForm {
   width: 25%;
-  background-color: #93c5fd; /* bg-blue-300 */
+  background-color: #93c5fd; 
   padding: 64px;
   border-radius: 8px;
 }
@@ -30,7 +30,7 @@
 }
 
 .inputField {
-  border: 2px solid #000; /* border-2 */
+  border: 2px solid #000; 
   padding: 8px;
   border-radius: 12px;
   font-weight: 600;
@@ -38,10 +38,10 @@
 }
 
 .inputField:focus {
-  outline: 2px solid #64748b; /* focus:outline-slate-600 */
+  outline: 2px solid #64748b; 
 }
 
-/* Butonlar ve link düzeni */
+
 .formActions {
   display: flex;
   align-items: center;
@@ -50,7 +50,7 @@
 
 .btnPrimary {
   padding: 8px;
-  background-color: #2563eb; /* bg-blue-600 */
+  background-color: #2563eb; 
   color: white;
   border-radius: 8px;
   border: none;
@@ -59,12 +59,12 @@
 }
 
 .btnPrimary:hover {
-  background-color: #1e40af; /* Hover efekti */
+  background-color: #1e40af; 
 }
 
 .btnSecondary {
   padding: 8px;
-  background-color: #34d399; /* bg-green-400 */
+  background-color: #34d399; 
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -72,5 +72,5 @@
 }
 
 .btnSecondary:hover {
-  background-color: #059669; /* Hover efekti */
+  background-color: #059669; 
 }

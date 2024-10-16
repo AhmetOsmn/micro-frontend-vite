@@ -7,14 +7,15 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: "/dashboard/latest/",
+    publicPath: "/marketing/latest/",
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "dashboard",
+      name: "marketing",
       filename: "remoteEntry.js",
       exposes: {
-        "./DashboardPage": "./src/pages/DashboardPage",
+        "./LandingPage": "./src/pages/LandingPage",
+        "./PricingPage": "./src/pages/PricingPage",
       },
       shared: {
         ...packageJson.dependencies,

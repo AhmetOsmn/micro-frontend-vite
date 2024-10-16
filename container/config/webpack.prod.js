@@ -1,4 +1,4 @@
-const { merge } = require('webpack-merge');
+const { merge } = require("webpack-merge");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
@@ -11,9 +11,10 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",      
-      remotes: {        
+      name: "container",
+      remotes: {
         dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
+        auth: `auth@${domain}/auth/latest/remoteEntry.js`,
       },
     }),
   ],

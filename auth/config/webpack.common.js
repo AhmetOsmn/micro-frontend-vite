@@ -14,7 +14,7 @@ module.exports = {
             presets: [
               "@babel/preset-typescript",
               "@babel/preset-env",
-              ["@babel/preset-react", {"runtime": "automatic"}],
+              ["@babel/preset-react", { runtime: "automatic" }],
               "@babel/preset-flow",
             ],
             plugins: [
@@ -26,7 +26,19 @@ module.exports = {
       },
       {
         test: /\.(css|s[ac]ss)$/i,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                namedExport: false,
+              },
+            },
+          },
+          ,
+          "postcss-loader",
+        ],
       },
     ],
   },
