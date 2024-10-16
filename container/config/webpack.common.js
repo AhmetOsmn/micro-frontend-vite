@@ -10,10 +10,10 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-react'], // JSX için gerekli Babel preset'i
+              presets: ['@babel/preset-react'],
             },
           },
-          'ts-loader', // TypeScript dosyalarını işleyen loader
+          'ts-loader',
         ],
         exclude: /node_modules/,
       },
@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./dist/index.html",
+      template: "./index.html",
     }),
   ],
 };

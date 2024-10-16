@@ -1,5 +1,0 @@
-declare module 'marketing/PricingPage'
-declare module 'marketing/LandingPage'
-declare module 'dashboard/DashboardPage'
-declare module 'auth/SignInPage'
-declare module 'auth/SignUpPage'
