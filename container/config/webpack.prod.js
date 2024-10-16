@@ -15,7 +15,6 @@ const prodConfig = {
       remotes: {        
         dashboard: `dashboard@${domain}/dashboard/latest/remoteEntry.js`,
       },
-      shared: packageJson.dependencies,
     }),
   ],
 };

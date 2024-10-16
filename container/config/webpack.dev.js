@@ -1,6 +1,6 @@
 const { merge } = require("webpack-merge");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const packageJson = require("../package.json");
+const deps = require("../package.json").dependencies;
 const commonConfig = require("./webpack.common");
 
 const devConfig = {
@@ -17,6 +17,20 @@ const devConfig = {
       name: "container",
       remotes: {
         dashboard: "dashboard@http://localhost:5002/remoteEntry.js",
+      },
+      shared: {
+        ...deps,
+        react: { singleton: true, eager: true, requiredVersion: deps.react },
+        "react-dom": {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps["react-dom"],
+        },
+        "react-router-dom": {
+          singleton: true,
+          eager: true,
+          requiredVersion: deps["react-router-dom"],
+        },
       },
     }),
   ],
